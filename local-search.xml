@@ -4,6 +4,51 @@
   
   
   <entry>
+    <title>MarkDown写作指南</title>
+    <link href="/2021/01/31/MarkDown%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/"/>
+    <url>/2021/01/31/MarkDown%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>linux从入门到入土</title>
+    <link href="/2021/01/31/linux%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/"/>
+    <url>/2021/01/31/linux%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>【ACM】遇到的数学小问题</title>
+    <link href="/2021/01/28/%E3%80%90ACM%E3%80%91%E9%81%87%E5%88%B0%E7%9A%84%E6%95%B0%E5%AD%A6%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <url>/2021/01/28/%E3%80%90ACM%E3%80%91%E9%81%87%E5%88%B0%E7%9A%84%E6%95%B0%E5%AD%A6%E5%B0%8F%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在做题的时候遇到了两个很有趣的问题，一个是组合数学中的<color>错排问题</color>，而另一个则是数学规律的推导。</p><h2 id="错排问题"><a href="#错排问题" class="headerlink" title="错排问题"></a>错排问题</h2><p>出自SDUT-2058 ()</p><p>这个问题的解决思路，是组合数学中的错排问题，这样的话我们可以直接使用错排公式直接解出答案。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ACM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2021/01/10/hello-world/"/>
     <url>/2021/01/10/hello-world/</url>
