@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/debian.png">
+  <link rel="icon" type="image/png" href="/img/debian.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -183,16 +183,18 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/31/MarkDown%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">MarkDown写作指南</a>
+        <a href="/2021/02/01/%E3%80%90ACM%E3%80%91%E5%B8%B8%E7%94%A8STL%E6%95%B4%E7%90%86/">【ACM】常用STL整理</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/01/31/MarkDown%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
+        <a href="/2021/02/01/%E3%80%90ACM%E3%80%91%E5%B8%B8%E7%94%A8STL%E6%95%B4%E7%90%86/">
           
           
             
           
           
+
+
         </a>
       </p>
 
@@ -200,12 +202,67 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-01-31 18:15" pubdate>
-              2021-01-31
+            <time datetime="2021-02-01 23:14" pubdate>
+              2021-02-01
             </time>
           </div>
         
         
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/ACM/">ACM</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/01/%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3%E9%A2%98%E8%A7%A3/">青蛙过河题解</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/01/%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3%E9%A2%98%E8%A7%A3/">
+          
+          
+            
+          
+          
+
+
+
+[https://acm.sdut.edu.cn/onlinejudge3/problems/3479]:     “青蛙过河 “
+我会以图片的形式简单形容一下思路，能够更好的理解。
+
+可以很明显的推导出，整个递归的边界就是tiao(0,y) = y+1 ** ，而左右两岸之间没多一根柱子的话就会使他的数量翻一倍，tiao(x,y) = tiao(x-1,y)*2** 这个公式是推导出来的
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-01 23:13" pubdate>
+              2021-02-01
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/SDUT/">SDUT</a>
+            
+          </div>
         
       </div>
     </article>
@@ -226,7 +283,8 @@
           
             
           
-          
+          再次转战Linux系统在不知道过了多长时间之后，又再次决定安装Linux系统，这次选择的仍然是Debian系统，而在这么长时间的Linux使用时间中，我使用时间最长的就是Debian，相较于arch、manjaro等等的发行版我仍然觉的Debian在一定程度上是很方便的，而且也是很基础便捷的使用方式。
+自己的Linux环境的配置自己使用Linux环境的主要还是面对学习上的一些使用，具体各个环境配置
         </a>
       </p>
 
@@ -240,6 +298,13 @@
           </div>
         
         
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/linux/">linux</a>
+            
+          </div>
         
       </div>
     </article>
@@ -260,10 +325,12 @@
           
             
           
-          前言在做题的时候遇到了两个很有趣的问题，一个是组合数学中的错排问题，而另一个则是数学规律的推导。
-错排问题出自SDUT-2058 ()
-这个问题的解决思路，是组合数学中的错排问题，这样的话我们可以直接使用错排公式直接解出答案。
+          
 
+前言在做题的时候遇到了两个很有趣的问题，一个是组合数学中的错排问题，而另一个则是数学规律的推导。
+错排问题出自SDUT-2058 https://acm.sdut.edu.cn/onlinejudge3/contests/3677/problems/F
+这个问题的解决思路，是组合数学中的错排问题，这样的话我们可以直接使用错排公式直接解出答案。
+*D[n] = (n-1) * (D[n-1] +
         </a>
       </p>
 
