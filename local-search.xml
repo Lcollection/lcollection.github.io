@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>OpenEuler特辑-前期准备</title>
+    <link href="/2021/07/14/OpenEuler%E7%89%B9%E8%BE%91-%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87/"/>
+    <url>/2021/07/14/OpenEuler%E7%89%B9%E8%BE%91-%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux指北手册</title>
     <link href="/2021/05/06/Linux%E6%8C%87%E5%8C%97%E6%89%8B%E5%86%8C/"/>
     <url>/2021/05/06/Linux%E6%8C%87%E5%8C%97%E6%89%8B%E5%86%8C/</url>
@@ -17,25 +30,6 @@
   
   
   <entry>
-    <title>R语言入门</title>
-    <link href="/2021/04/11/R%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
-    <url>/2021/04/11/R%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/</url>
-    
-    <content type="html"><![CDATA[<h1 id="R"><a href="#R" class="headerlink" title="R"></a>R</h1>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>教程</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Github入门教程</title>
     <link href="/2021/03/09/Github%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     <url>/2021/03/09/Github%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
@@ -43,25 +37,6 @@
     <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>这又是我开的另一个大坑的内容，这部分主要是想要讲一下GitHub的基本使用方法、一些常用的指令以及一个我正在采用的同步的一个流程。</p><h2 id="关于GitHub"><a href="#关于GitHub" class="headerlink" title="关于GitHub"></a>关于GitHub</h2><p>GitHub是全球最大的同性交流网站，在上面你几乎能找到你想要的一切内容，而且越来越多人和组织加入到开源的大家庭中这是一件好事。我也是很早以前就接触到了开源的世界，大家在一起交流分享知识增进自己的代码水平，让自己不断的成长。</p><h3 id="进入社区前你要做好的准备"><a href="#进入社区前你要做好的准备" class="headerlink" title="进入社区前你要做好的准备"></a>进入社区前你要做好的准备</h3><p>首先就是一个GitHub的账号，当然如今市面上有很多的开源社区都可以选择，技术和实现的过程几乎是一样的，这里我以我最常用的GitHub为例子来个大家讲解。账号可以在GitHub首页直接注册，目前来说裸连的话也是没有问题的。但是有些时候也会抽风，所以最好准备一个梯子以防不时之需。</p><p>注册完账号之后便是配置在本地环境，直接在终端中输入以下指令</p><p><code>ssh-keygen -C &quot;email adress&quot; -t rsa</code></p><p>这条指令会在你的用户路径下生成一个./ssh的文件夹，进入之后你会发现有两个文件，id_rsa这个文件是私钥（保存好），另一个id_rsa.pub这个是你的公钥。</p><p>之后进入GitHub的个人设置页面中<code>SSH and GPG keys</code>选项中将你的公钥复制进去（是公钥里面的数据，记事本打开即可），完成之后点击add SSH key。</p><p>这样你的配置就完成了。</p><h2 id="关于指令的用法"><a href="#关于指令的用法" class="headerlink" title="关于指令的用法"></a>关于指令的用法</h2><p>在本地的环境配置好了以后    </p>]]></content>
     
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>数论入门</title>
-    <link href="/2021/02/22/%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/"/>
-    <url>/2021/02/22/%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</url>
-    
-    <content type="html"><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul><li>最大公约数和最小公倍数</li><li></li></ul>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>ACM</tag>
-      
-    </tags>
     
   </entry>
   
