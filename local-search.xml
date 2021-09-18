@@ -4,11 +4,30 @@
   
   
   <entry>
+    <title>数据结构（二）-- 初识数据结构</title>
+    <link href="/2021/09/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <url>/2021/09/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h2 id="数据结构基本概念"><a href="#数据结构基本概念" class="headerlink" title="数据结构基本概念"></a>数据结构基本概念</h2><p><strong>数据</strong> 对于客观事物的符号表示，所有能输入到计算机中并被计算机程序处理的符号总称</p><p><strong>数据元素</strong> 数据的基本单位，在计算机程序中通常作为一个整体进行考虑和处理</p><p><strong>数据对象</strong> 性质相同的数据集合，是数据的一个子集</p><p><strong>数据结构</strong> 相互之间存在一种或多种特定关系的数据元素的集合</p><p><strong>结构</strong> 数据元素之间的关系 </p><p>常见的数据结构： </p><ul><li>集合    所有元素同属于同一集合中</li><li>线性结构    结构中的数据元素之间存在一个对一个的关系</li><li>树形结构    结构中的数据元素之间存在一个对多个的关系</li><li>图状结构/网状结构    结构中的数据元素之间存在多个对多个的关系</li></ul><p><strong>数据结构的形式定义</strong> 一个二元组<br>$$<br>Data_Struct=(D,S)<br>$$<br>D : 数据元素的有限集             S ： D上关系的有限集</p><p><strong>物理结构</strong> 数据结构在计算机中的表示 （存储结构）</p><p><strong>位（bit）</strong> 信息的最小单位</p><p><strong>元素（结点）</strong> 若干位组合起来形成的一个位串表示数据元素</p><p><strong>数据域</strong> 数据元素由若干数据项组成，位串中对应于各个数据项的子位串</p><p><strong>顺序映像 &amp;&amp; 非顺序映像</strong> 数据元素之间的关系在计算机中有两种不同的表示方式</p><p><strong>顺序存储结构 &amp;&amp; 链式存储结构</strong> </p><ol><li>顺序结构的特点： 借助元素在存储器中的相对位置来表示数据元素之间的逻辑关系</li><li>非顺序结构的特点： 借助指示元素存储地址的指针（pointer）表示数据元素之间的逻辑关系</li></ol><p><strong>虚拟存储结构</strong> 数据结构在C虚拟处理器中的表示</p><p><strong>数据类型</strong> 和数据结构密切相关的概念，用来刻画程序操作对象的特征 </p><p><strong>原子类型</strong> 原子类型的值是不可分解的    例如： 基本类型、指针类型和空类型</p><p><strong>结构类型</strong> 数值是可以分解的，例如 结构体 </p><p><strong>抽象数据类型 Abstract Data Type</strong> 是指一个数学模型以及定义在该模型上的一组操作</p><ul><li>原子类型    属于原子类型的变量的值是不可分割的</li><li>固定聚合类型    属于改类型的变量，数据</li><li>可变聚合类型</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数据结构（一）-- 序章</title>
     <link href="/2021/09/13/%E5%BA%8F%E7%AB%A0/"/>
     <url>/2021/09/13/%E5%BA%8F%E7%AB%A0/</url>
     
-    <content type="html"><![CDATA[<h1 id="关于这门课程"><a href="#关于这门课程" class="headerlink" title="关于这门课程"></a>关于这门课程</h1><p>数据结构作为计算机专业的基础专业课程，在学习中有着举足轻重的作用；而如果未来有考研的计划的话，这会是一个很重要的课程。</p><h2 id="文章结构"><a href="#文章结构" class="headerlink" title="文章结构"></a>文章结构</h2><p>未来我会跟着课程的进度，对对应章节进行归纳整理出相对应的文章，把握课程的中心思想并为期末复习做好充足准备。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="关于这门课程"><a href="#关于这门课程" class="headerlink" title="关于这门课程"></a>关于这门课程</h1><p>数据结构作为计算机专业的基础专业课程，在学习中有着举足轻重的作用；而如果未来有考研的计划的话，这会是一个很重要的课程。</p><a id="more"></a><h2 id="文章结构"><a href="#文章结构" class="headerlink" title="文章结构"></a>文章结构</h2><p>未来我会跟着课程的进度，对对应章节进行归纳整理出相对应的文章，把握课程的中心思想并为期末复习做好充足准备。</p>]]></content>
     
     
     
