@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/div.png">
+  <link rel="icon" type="image/png" href="/img/div.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="L_Collection">
+  <meta name="keywords" content="">
+  <title>VSCode插件开发日记--1环境配置 - Code_Space</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Code_Space</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="VSCode插件开发日记--1环境配置">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-03 18:54" pubdate>
+        2022年1月3日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">VSCode插件开发日记--1环境配置</h1>
+            
+            <div class="markdown-body">
+              <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>​    在插件商店中找了很久，能听歌了，能写知乎了，甚至可以去交代码了。但是在kaggle的比赛中并没有相关的插件，所以开始着手写自己的第一个插件，去适应相关的数据竞赛的环境。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>​    在VScode的文档页有对插件开发的相关介绍，需要自己的电脑已经安装了Node.js 和 Git</p>
+<p>​    之后运行</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs vbnet">npm install -g yo generator-code<br><br>yo code<br><br>? What type <span class="hljs-keyword">of</span> extension <span class="hljs-keyword">do</span> you want <span class="hljs-keyword">to</span> create? <span class="hljs-built_in">New</span> Extension (JavaScript)<br>? What<span class="hljs-comment">&#x27;s the name of your extension? Kaggle-Tools</span><br>? What<span class="hljs-comment">&#x27;s the identifier of your extension? kaggle-tools</span><br>? What<span class="hljs-comment">&#x27;s the description of your extension?</span><br>? Enable JavaScript type checking <span class="hljs-keyword">in</span> <span class="hljs-comment">&#x27;jsconfig.json&#x27;? No</span><br>? Initialize a git repository? Yes<br>? Which package manager <span class="hljs-keyword">to</span> use? npm<br></code></pre></td></tr></table></figure>
+<p>之后，进入到编辑器中 ，按F5，会在一个新的本地插件开发窗口打开</p>
+<p>![image-20220103195211834](/Users/l_collection/Library/Application Support/typora-user-images/image-20220103195211834.png)</p>
+<p>在运行窗口中 <code>cmd+shift+p</code> 调出命令面板，输入Hello World 右下角弹出相应的信息反馈。</p>
+<h2 id="后续开发"><a href="#后续开发" class="headerlink" title="后续开发"></a>后续开发</h2><p>之后可以尝试改变右下角的消息弹出内容</p>
+<pre><code>1. 改变showInformationMessage()中的内容在extension.js文件中（我是以JavaScript格式生成的）
+1. 再次运行开发窗口，重复运行一边上述的操作，发现弹出信息发生变化</code></pre>
+<h2 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h2><p>VScode在插件开发的过程中可以进行断点调试</p>
+<h2 id="项目文件夹结构"><a href="#项目文件夹结构" class="headerlink" title="项目文件夹结构"></a>项目文件夹结构</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs awk">.<br>├── .gitignore                  <span class="hljs-regexp">//</span>配置不需要加入版本管理的文件<br>├── .vscode                     <span class="hljs-regexp">//</span> VS Code的整合<br>│   ├── launch.json<br>│   ├── settings.json<br>│   └── tasks.json<br>├── .vscodeignore                <span class="hljs-regexp">//</span>配置不需要加入最终发布到拓展中的文件<br>├── README.md<br>├── src                         <span class="hljs-regexp">//</span> 源文件<br>│   └── extension.ts            <span class="hljs-regexp">//</span> 如果我们使用js来开发拓展，则该文件的后缀为.js<br>├── test                        <span class="hljs-regexp">//</span> test文件夹<br>│   ├── extension.test.ts       <span class="hljs-regexp">//</span> 如果我们使用js来开发拓展，则该文件的后缀为.js<br>│   └── index.ts                <span class="hljs-regexp">//</span> 如果我们使用js来开发拓展，则该文件的后缀为.js<br>├── node_modules<br>│   ├── vscode                  <span class="hljs-regexp">//</span> vscode对typescript的语言支持。<br>│   └── typescript              <span class="hljs-regexp">//</span> TypeScript的编译器<br>├── out                         <span class="hljs-regexp">//</span> 编译之后的输出文件夹(只有TypeScript需要，JS无需)<br>│   ├── src<br>│   |   ├── extension.js<br>│   |   └── extension.js.map<br>│   └── test<br>│       ├── extension.test.js<br>│       ├── extension.test.js.map<br>│       ├── index.js<br>│       └── index.js.map<br>├── package.json                <span class="hljs-regexp">//</span> 该拓展的资源配置文件<br>├── tsconfig.json               <span class="hljs-regexp">//</span> <br>├── typings                     <span class="hljs-regexp">//</span> 类型定义文件夹<br>│   ├── node.d.ts               <span class="hljs-regexp">//</span> 和Node.js关联的类型定义<br>│   └── vscode-typings.d.ts     <span class="hljs-regexp">//</span> 和VS Code关联的类型定义<br>└── vsc-extension-quickstart.md <br></code></pre></td></tr></table></figure>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br> <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;sample&quot;</span>,              <span class="hljs-comment">//插件扩展名称（对应创建项目时候的输入）</span><br> <span class="hljs-attr">&quot;displayName&quot;</span>: <span class="hljs-string">&quot;sample&quot;</span>,<br> <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;blog sample&quot;</span>,  <span class="hljs-comment">//插件扩展的描述（对应创建项目时候的输入）</span><br> <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.0.1&quot;</span>,<br> <span class="hljs-attr">&quot;publisher&quot;</span>: <span class="hljs-string">&quot;caipeiyu&quot;</span>,       <span class="hljs-comment">//发布时候的一个名称（对应创建项目时候的输入）</span><br> <span class="hljs-attr">&quot;engines&quot;</span>: &#123;<br>     <span class="hljs-attr">&quot;vscode&quot;</span>: <span class="hljs-string">&quot;^0.10.10&quot;</span><br> &#125;,<br> <span class="hljs-attr">&quot;categories&quot;</span>: [<br>     <span class="hljs-string">&quot;Other&quot;</span><br> ],<br> <span class="hljs-attr">&quot;activationEvents&quot;</span>: [          <span class="hljs-comment">//这是我们要理解的地方，是触发插件执行一些代码的配置</span><br>     <span class="hljs-string">&quot;onCommand:extension.sayHello&quot;</span> <span class="hljs-comment">//这种是通过输入命令来触发执行的</span><br> ],<br> <span class="hljs-attr">&quot;main&quot;</span>: <span class="hljs-string">&quot;./out/src/extension&quot;</span>,  <span class="hljs-comment">//这个是配置TypeScript编译成js的输出目录</span><br> <span class="hljs-attr">&quot;contributes&quot;</span>: &#123;<br>     <span class="hljs-attr">&quot;commands&quot;</span>: [&#123;             <span class="hljs-comment">//title 和 command是一个对应关系的</span><br>         <span class="hljs-attr">&quot;command&quot;</span>: <span class="hljs-string">&quot;extension.sayHello&quot;</span>, <span class="hljs-comment">//这个是对应上面那个命令触发的，在代码里面也要用到</span><br>         <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Hello World&quot;</span>   <span class="hljs-comment">//这个是我们在vscode里面输入的命令</span><br>     &#125;]<br> &#125;,<br> <span class="hljs-attr">&quot;scripts&quot;</span>: &#123;                     <span class="hljs-comment">//是在发布打包，或者其他运行时候，要执行的一些脚本命令</span><br>     <span class="hljs-attr">&quot;vscode:prepublish&quot;</span>: <span class="hljs-string">&quot;node ./node_modules/vscode/bin/compile&quot;</span>,<br>     <span class="hljs-attr">&quot;compile&quot;</span>: <span class="hljs-string">&quot;node ./node_modules/vscode/bin/compile -watch -p ./&quot;</span>,<br>     <span class="hljs-attr">&quot;postinstall&quot;</span>: <span class="hljs-string">&quot;node ./node_modules/vscode/bin/install&quot;</span><br> &#125;,<br> <span class="hljs-attr">&quot;devDependencies&quot;</span>: &#123;           <span class="hljs-comment">//这是开发的依赖包，如果有其他的依赖包，并要打包的话，需要把dev去掉</span><br>     <span class="hljs-attr">&quot;typescript&quot;</span>: <span class="hljs-string">&quot;^1.8.5&quot;</span>,<br>     <span class="hljs-attr">&quot;vscode&quot;</span>: <span class="hljs-string">&quot;^0.11.0&quot;</span><br> &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h3 id="extension-ts"><a href="#extension-ts" class="headerlink" title="extension.ts"></a>extension.ts</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-meta">&#x27;use strict&#x27;</span>;<br><span class="hljs-comment">// The module &#x27;vscode&#x27; contains the VS Code extensibility API</span><br><span class="hljs-comment">// Import the module and reference it with the alias vscode in your code below</span><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> vscode <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vscode&#x27;</span>;<br><br><span class="hljs-comment">// this method is called when your extension is activated</span><br><span class="hljs-comment">// your extension is activated the very first time the command is executed</span><br><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">activate</span>(<span class="hljs-params">context: vscode.ExtensionContext</span>) </span>&#123;<br><br>    <span class="hljs-comment">// Use the console to output diagnostic information (console.log) and errors (console.error)</span><br>    <span class="hljs-comment">// This line of code will only be executed once when your extension is activated</span><br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Congratulations, your extension &quot;sample&quot; is now active!&#x27;</span>);<br><br>    <span class="hljs-comment">// The command has been defined in the package.json file</span><br>    <span class="hljs-comment">// Now provide the implementation of the command with  registerCommand</span><br>    <span class="hljs-comment">// The commandId parameter must match the command field in package.json</span><br>    <span class="hljs-keyword">let</span> disposable = vscode.commands.registerCommand(<span class="hljs-string">&#x27;extension.sayHello&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-comment">//只看这个地方&#x27;extension.sayHello&#x27;和 package.json 里面的 &quot;onCommand:extension.sayHello&quot; 是一个对应关系</span><br>        <span class="hljs-comment">// The code you place here will be executed every time your command is executed</span><br><br>        <span class="hljs-comment">// Display a message box to the user</span><br>        vscode.window.showInformationMessage(<span class="hljs-string">&#x27;Hello World!&#x27;</span>);<br>    &#125;);<br><br>    context.subscriptions.push(disposable);<br>    &#125;<br><br>    <span class="hljs-comment">// this method is called when your extension is deactivated</span><br>    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deactivate</span>(<span class="hljs-params"></span>) </span>&#123;<br>    &#125;<br><br></code></pre></td></tr></table></figure>
+
+
+<p>当我们需要多增加一个命令叫做Hello Sample的，需要在package.json的文件中添加相关配置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs json">...<br>&quot;activationEvents&quot;: [<br>			&quot;onCommand:extension.sayHello&quot;,<br>			<span class="hljs-string">&quot;onCommand:extension.saySample&quot;</span><br>],<br>&quot;contributes&quot;: [<br>			&quot;commands&quot;: [&#123;<br>						&quot;command&quot;: &quot;extension.sayHello&quot;,<br>						&quot;title&quot;: &quot;Hello World&quot;<br>				&#125;,&#123;<br>						&quot;command&quot;: &quot;extension.saySample&quot;,<br>						&quot;title&quot;: &quot;Hello Sample&quot;<br>				&#125;]<br>],<br>...<br></code></pre></td></tr></table></figure>
+<p>添加完成配置后，在extension.ts文件中注册命令事件</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">let</span> disposable = vscode.commands.refisterCommand(<span class="hljs-string">&#x27;extension.sayHello&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>		vscode.window.showInformationMessage(<span class="hljs-string">&#x27;Hello World!&#x27;</span>);<br>&#125;);<br><br>context.subscriptions.push(dispossable);<br><br><span class="hljs-keyword">let</span> saySample = vscode.commands.registerCommand(<span class="hljs-string">&#x27;extension.saySample&#x27;</span>,<span class="hljs-function">() =&gt;</span> &#123;<br>		vscode.windows.showInformationMessage(<span class="hljs-string">&#x27;This is a new sample command!&#x27;</span>);<br>&#125;);<br>context.subscriptions.push(saySample);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="打包与发布"><a href="#打包与发布" class="headerlink" title="打包与发布"></a>打包与发布</h2><p>在编写完成插件后，需要将它打包压缩之后才能发布到官网中。</p>
+<p><code>npm install -g vsce</code> 一个打包工具</p>
+<p>cd到项目的目录下 </p>
+<p><code>vsce public</code></p>
+<p>发布成功后可以在vscode中用 <code>ext install</code>来安装这个插件。这种方法需要去配置一个token，还会过期等巴拉巴拉的问题</p>
+<h3 id="正确简便的发布方式"><a href="#正确简便的发布方式" class="headerlink" title="正确简便的发布方式"></a>正确简便的发布方式</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">vsce package<br><br>Executing prepublish script &#x27;<span class="hljs-keyword">node</span> <span class="hljs-title">./node_modules</span>/vscode/bin/compile&#x27;...<br><br>Created: /sample/sample-<span class="hljs-number">0.0</span>.<span class="hljs-number">1</span>.vsix<br></code></pre></td></tr></table></figure>
+<p>执行完成后，在执行一个<code>script &#39;node ./node_moudles/vscode/bin/compile&#39;</code>这个命令是在<code>package.json</code></p>
+<p>然后再配置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs json">&quot;scripts&quot;: &#123;<br>    &quot;vscode:prepublish&quot;: &quot;node ./node_modules/vscode/bin/compile&quot;,<br>    &quot;compile&quot;: &quot;node ./node_modules/vscode/bin/compile -watch -p ./&quot;,<br>    &quot;postinstall&quot;: &quot;node ./node_modules/vscode/bin/install&quot;<br>&#125;,<br></code></pre></td></tr></table></figure>
+<p>执行之后会生成一个sample-0.0.1.vsix，这个就是打包好的插件安装包，直接拖到vscode的窗口上，就会提示安装成功重启vscode，重启之后就能使用相关命令了，在插件的目录下也多了相应的sample的目录</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/TypeScript/">TypeScript</a>
+                    
+                      <a class="hover-with-bg" href="/tags/VScode/">VScode</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/25/%E7%94%9F%E4%BF%A1-%E9%AB%98%E9%80%9A%E9%87%8F%E6%B5%8B%E5%BA%8F%E5%88%86%E6%9E%90/">
+                        <span class="hidden-mobile">生信--高通量测序分析</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
