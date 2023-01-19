@@ -4,32 +4,6 @@
   
   
   <entry>
-    <title>【神经科学】基础学习内容</title>
-    <link href="/2022/09/27/%E3%80%90%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E3%80%91%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9/"/>
-    <url>/2022/09/27/%E3%80%90%E7%A5%9E%E7%BB%8F%E7%A7%91%E5%AD%A6%E3%80%91%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>什么是Colab</title>
-    <link href="/2022/09/06/%E4%BB%80%E4%B9%88%E6%98%AFColab/"/>
-    <url>/2022/09/06/%E4%BB%80%E4%B9%88%E6%98%AFColab/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>【ML】2022年机器学习的状况</title>
     <link href="/2022/08/10/%E3%80%90ML%E3%80%912022%E5%B9%B4%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%8A%B6%E5%86%B5/"/>
     <url>/2022/08/10/%E3%80%90ML%E3%80%912022%E5%B9%B4%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%8A%B6%E5%86%B5/</url>
@@ -121,19 +95,6 @@
       <tag>Bioinfo-Tools</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Linux从入门到入土（一）</title>
-    <link href="/2021/09/23/Linux%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <url>/2021/09/23/Linux%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
     
   </entry>
   
@@ -248,44 +209,6 @@
   
   
   <entry>
-    <title>【ACM】一道经典的模拟题——回文串判断</title>
-    <link href="/2021/02/06/%E3%80%90ACM%E3%80%91%E4%B8%80%E9%81%93%E7%BB%8F%E5%85%B8%E7%9A%84%E6%A8%A1%E6%8B%9F%E9%A2%98%E2%80%94%E2%80%94%E5%9B%9E%E6%96%87%E4%B8%B2%E5%88%A4%E6%96%AD/"/>
-    <url>/2021/02/06/%E3%80%90ACM%E3%80%91%E4%B8%80%E9%81%93%E7%BB%8F%E5%85%B8%E7%9A%84%E6%A8%A1%E6%8B%9F%E9%A2%98%E2%80%94%E2%80%94%E5%9B%9E%E6%96%87%E4%B8%B2%E5%88%A4%E6%96%AD/</url>
-    
-    <content type="html"><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>输入一串字符（长度小于100），判断该串字符是否是回文串（正序读与逆序读内容相同）。</p><a id="more"></a><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>输入一串字符（长度小于100）。</p><h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>若该串字符是回文串输出“yes”，否则输出”no“。</p><h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><h4 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">asdfgfdsa</span><br></code></pre></td></tr></table></figure><h4 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-literal">yes</span><br></code></pre></td></tr></table></figure><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>  直接按照题目所给的要求，直接从字符串的第一个字符开始依次和尾部的倒数第一个字符进行比较如果相同则继续向下，否则跳出结束输出错误结果。</p><p>​    <strong>for(int i=0;i&lt;str.length();i++)</strong></p><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>因为是回文串的形式，所以从最中间向两边是对称的，所以我们只需要便利1/2的长度就能求出最后的结果。长度为偶数的话就会两两匹配，奇数个的长度的话就会最后单剩下中间的字符，自身与自身比较一定相同。</p><p><strong>for(int i=0;i&lt;=str.length()/2;i++)</strong></p><h1 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">string</span> str;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span> &gt;&gt; str)<br>    &#123;<br>        <span class="hljs-keyword">int</span> len = str.length();<br>        <span class="hljs-keyword">int</span> flag = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;=len/<span class="hljs-number">2</span>;i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(str[i] != str[len<span class="hljs-number">-1</span>-i]) &#123;flag = <span class="hljs-number">1</span>;<span class="hljs-keyword">break</span>;&#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(flag)<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;no&quot;</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;yes&quot;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>ACM</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>【ACM】常用STL整理</title>
-    <link href="/2021/02/01/%E3%80%90ACM%E3%80%91%E5%B8%B8%E7%94%A8STL%E6%95%B4%E7%90%86/"/>
-    <url>/2021/02/01/%E3%80%90ACM%E3%80%91%E5%B8%B8%E7%94%A8STL%E6%95%B4%E7%90%86/</url>
-    
-    <content type="html"><![CDATA[<a id="more"></a>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>ACM</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>青蛙过河题解</title>
     <link href="/2021/02/01/%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3%E9%A2%98%E8%A7%A3/"/>
     <url>/2021/02/01/%E9%9D%92%E8%9B%99%E8%BF%87%E6%B2%B3%E9%A2%98%E8%A7%A3/</url>
@@ -297,25 +220,6 @@
     <tags>
       
       <tag>SDUT</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>【ACM】遇到的数学小问题</title>
-    <link href="/2021/01/28/%E3%80%90ACM%E3%80%91%E9%81%87%E5%88%B0%E7%9A%84%E6%95%B0%E5%AD%A6%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
-    <url>/2021/01/28/%E3%80%90ACM%E3%80%91%E9%81%87%E5%88%B0%E7%9A%84%E6%95%B0%E5%AD%A6%E5%B0%8F%E9%97%AE%E9%A2%98/</url>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><a id="more"></a><p>在做题的时候遇到了两个很有趣的问题，一个是组合数学中的<color>错排问题</color>，而另一个则是数学规律的推导。</p><h2 id="错排问题"><a href="#错排问题" class="headerlink" title="错排问题"></a>错排问题</h2><p>出自SDUT-2058 <a href="%E4%B8%89%E5%9B%BD%E8%BD%B6%E4%BA%8B%E2%80%94%E2%80%94%E5%B7%B4%E8%9C%80%E4%B9%8B%E5%8D%B1">https://acm.sdut.edu.cn/onlinejudge3/contests/3677/problems/F</a></p><p>这个问题的解决思路，是组合数学中的错排问题，这样的话我们可以直接使用错排公式直接解出答案。</p><p>*<em>D[n] = (n-1) * (D[n-1] + D[n-2])*</em></p><p>具体的推导内容并没有很仔细的整理，只是简单概括为当第一个进行错排时，会占据有n-1种错误的选择，而在占据一个错误的位置后会导致该位置的出现n-1种错误的选择。以此类推，每次都会出现这样的位置，一直出现到n-n=0的结果。</p><p>第二个问题是对与一些简单的数学知识的应用——切饼问题：在切n刀的情况下，能够出现的最大的块数R[n]。</p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>ACM</tag>
       
     </tags>
     
