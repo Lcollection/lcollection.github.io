@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/div.png">
+  <link rel="icon" type="image/png" href="/img/div.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="L_Collection">
+  <meta name="keywords" content="">
+  <title>Sphinx快速创建文档 - Code_Space</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Code_Space</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Sphinx快速创建文档">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-01-26 04:05" pubdate>
+        2023年1月26日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      19
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Sphinx快速创建文档</h1>
+            
+            <div class="markdown-body">
+              <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>最近在学一些很新的东西，所以想把这些内容整理整理发出来，那么做成一个Document的形式是一种很有效而且很常见的形式；那么Sphinx这个框架首先就进入到了我的视线。主要，可以很轻松的创建文档，同时他可以在编译过程中输出多种格式，这样的效果是我们最为需要的，同时，其可以部署在Github Page上，相比较于Gitbook的简单的文档形式，Sphinx可以通过引用插件的形式进行更多的个性化操作。</p>
+<h1 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h1><p>本地环境：Mac OS 13.0.1 </p>
+<p>线上部署：Github Page + Sphinx</p>
+<p>在Mac环境下，可以用Homebrew快速安装Sphinx</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> Homebrew</span><br>brew install sphinx-doc <br><br><span class="hljs-meta">#</span><span class="bash">pip</span><br>pip install sphinx-doc<br></code></pre></td></tr></table></figure>
+<h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><code class="hljs shell">sphinx-quickstart #快速创建项目<br><br><br><span class="hljs-meta">#</span><span class="bash"> 1.设置项目的根目录</span><br>Enter the root path for documentation.<br><span class="hljs-meta">&gt;</span><span class="bash"> Root path <span class="hljs-keyword">for</span> the documentation [.]:</span><br><br><span class="hljs-meta">#</span><span class="bash"> 2.是否分离build和<span class="hljs-built_in">source</span>目录（一半选择n）</span><br>You have two options for placing the build directory for Sphinx output.<br>Either, you use a directory &quot;_build&quot; within the root path, or you separate<br>&quot;source&quot; and &quot;build&quot; directories within the root path.<br><span class="hljs-meta">&gt;</span><span class="bash"> Separate <span class="hljs-built_in">source</span> and build directories (y/n) [n]:</span><br><br><span class="hljs-meta">#</span><span class="bash"> 3.设置前缀（默认）</span><br>Inside the root directory, two more directories will be created; &quot;_templates&quot;<br>for custom HTML templates and &quot;_static&quot; for custom stylesheets and other static<br>files. You can enter another prefix (such as &quot;.&quot;) to replace the underscore.<br><span class="hljs-meta">&gt;</span><span class="bash"> Name prefix <span class="hljs-keyword">for</span> templates and static dir [_]:</span><br><br><span class="hljs-meta">#</span><span class="bash"> 4.输入项目的名称和作者</span><br>The project name will occur in several places in the built documentation.<br><span class="hljs-meta">&gt;</span><span class="bash"> Project name: Sphinx-test</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Author name(s): <span class="hljs-built_in">test</span></span><br><br><span class="hljs-meta">#</span><span class="bash"> 5. 输入项目的版本号</span><br>Sphinx has the notion of a &quot;version&quot; and a &quot;release&quot; for the<br>software. Each version can have multiple releases. For example, for<br>Python the version is something like 2.5 or 3.0, while the release is<br>something like 2.5.1 or 3.0a1.  If you don&#x27;t need this dual structure,<br>just set both to the same value.<br><span class="hljs-meta">&gt;</span><span class="bash"> Project version []: 1.0.0</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Project release [1.0.0]:</span><br><br><span class="hljs-meta">#</span><span class="bash"> 6.文档语言</span><br>If the documents are to be written in a language other than English,<br>you can select a language here by its language code. Sphinx will then<br>translate text that it generates into that language.<br><br>For a list of supported codes, see<br>http://sphinx-doc.org/config.html#confval-language.<br><span class="hljs-meta">&gt;</span><span class="bash"> Project language [en]:</span><br><br><span class="hljs-meta">#</span><span class="bash"> 7. 设定文档的后缀</span><br>The file name suffix for source files. Commonly, this is either &quot;.txt&quot;<br>or &quot;.rst&quot;.  Only files with this suffix are considered documents.<br><span class="hljs-meta">&gt;</span><span class="bash"> Source file suffix [.rst]:</span><br><br><span class="hljs-meta">#</span><span class="bash"> 8.设定首页名称</span><br>One document is special in that it is considered the top node of the<br>&quot;contents tree&quot;, that is, it is the root of the hierarchical structure<br>of the documents. Normally, this is &quot;index&quot;, but if your &quot;index&quot;<br>document is a custom template, you can also set this to another filename.<br><span class="hljs-meta">&gt;</span><span class="bash"> Name of your master document (without suffix) [index]:</span><br><br><span class="hljs-meta">#</span><span class="bash"> 9.创建项目</span><br>A Makefile and a Windows command file can be generated for you so that you<br>only have to run e.g. `make html&#x27; instead of invoking sphinx-build<br>directly.<br><span class="hljs-meta">&gt;</span><span class="bash"> Create Makefile? (y/n) [y]: y</span><br><span class="hljs-meta">&gt;</span><span class="bash"> Create Windows <span class="hljs-built_in">command</span> file? (y/n) [y]: y</span><br><br>Creating file ./conf.py.<br>Creating file ./index.rst,.md.<br>Creating file ./Makefile.<br>Creating file ./make.bat.<br><br>Finished: An initial directory structure has been created.<br><br>You should now populate your master file ./index.rst,.md and create other documentation<br>source files. Use the Makefile to build the docs, like so:<br>   make builder<br>where &quot;builder&quot; is one of the supported builders, e.g. html, latex or linkcheck.<br><br></code></pre></td></tr></table></figure>
+<p>通过上面的步骤就可以在本地创建一个完整的Sphinx项目</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs vim">.<br>├── Makefile<br>├── build<br>├── <span class="hljs-keyword">make</span>.bat<br>└── <span class="hljs-keyword">source</span><br>    ├── _static<br>    ├── _templates<br>    ├── <span class="hljs-keyword">conf</span>.<span class="hljs-keyword">py</span><br>    └── <span class="hljs-built_in">index</span>.rst<br></code></pre></td></tr></table></figure>
+<p>整个项目结构如上所，</p>
+<ul>
+<li>build：用来存放makefile生成的网页文件的目录</li>
+<li>source：文档的源代码</li>
+<li>conf.py：Sphinx的配置文件</li>
+<li>index.rst：主文档</li>
+</ul>
+<h1 id="后续配置"><a href="#后续配置" class="headerlink" title="后续配置"></a>后续配置</h1><p>OK，到这里的话你的Sphinx项目已经创建好了，那么如何去配置这个Sphinx的情况，可以参考文章末尾的几个比较新手的使用手册，我也在一点点的摸索，所以大家一起学习一起交流。</p>
+<h1 id="部署到Github-Page"><a href="#部署到Github-Page" class="headerlink" title="部署到Github Page"></a>部署到Github Page</h1><p>部署到Github这个步骤对于经常使用Git的用户来说并不是很难，但是如何将一个编译好的静态文档同步上去主要面临以下几个问题：</p>
+<ul>
+<li>如何只将一些代码和重要文件上传到Github仓库中去</li>
+<li>在已经有一个Github Page的情况下如何去展示多个page页面</li>
+</ul>
+<h3 id="Step0-创建Github项目仓库"><a href="#Step0-创建Github项目仓库" class="headerlink" title="Step0 创建Github项目仓库"></a>Step0 创建Github项目仓库</h3><p>这一步的话我不用多做介绍了吧</p>
+<h3 id="Step1-设置同步省略文件"><a href="#Step1-设置同步省略文件" class="headerlink" title="Step1 设置同步省略文件"></a>Step1 设置同步省略文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> .gitignore</span><br>build/<br></code></pre></td></tr></table></figure>
+<p>这个设置之后，很明显编译后生成的build文件夹，并不会随着Git的同步而一起同步到远端，</p>
+<h3 id="Step2-创建Github-Action任务"><a href="#Step2-创建Github-Action任务" class="headerlink" title="Step2 创建Github Action任务"></a>Step2 创建Github Action任务</h3><p>这一步的话，还是不大清楚工作的具体原理是什么，目前知识感觉就是自己编写好的makefile直接放到线上环境中去执行；但是不晓得GitHub在这么多用户数量的情况下为什么会有这样的操作，这一步骤如果不清楚的话最好还是老老实实的去复制别人的文件去粘贴到自己的项目路径下（<del>因为，我就是这么干的</del>）</p>
+<p><strong>这部分的话未来找个具体的时间，可以好好的讲一讲</strong></p>
+<h1 id="最后写个小插曲–关于如何在项目中使用Jupyter-Notebook"><a href="#最后写个小插曲–关于如何在项目中使用Jupyter-Notebook" class="headerlink" title="最后写个小插曲–关于如何在项目中使用Jupyter Notebook"></a>最后写个小插曲–关于如何在项目中使用Jupyter Notebook</h1><p>这个问题是在写一些可能会用到Jupyter中的代码和可视化结果展示的时候，具体的实现效果的话如图所示</p>
+<p><img src="https://docs.readthedocs.io/en/stable/_images/example-notebook-rendered.png" srcset="/img/loading.gif"></p>
+<ol>
+<li><p>在 conf.py文件中添加插件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">extensions = [<br>    <span class="hljs-string">&quot;nbsphinx&quot;</span>,<br>]<br></code></pre></td></tr></table></figure></li>
+<li><p>将你的文件存储到项目根目录下（可以单独再去创建一个新的文件存放这些代码）</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs rst">.. toctree::<br>   :maxdepth: 2<br>   :caption: Contents:<br><br>   notebooks&#x2F;Example 1<br></code></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><p>[1] <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/27544821">用Sphinx快速制作文档</a> </p>
+<p>[2] <a target="_blank" rel="noopener" href="https://www.osgeo.cn/sphinx/usage/installation.html">Sphinx官方文档</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://zh-sphinx-doc.readthedocs.io/en/latest/index.html">Sphinx使用手册</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Sphinx/">Sphinx</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/20/%E7%B3%BB%E7%BB%9F%E7%94%9F%E7%89%A9%E5%AD%A6%E6%95%B4%E7%90%86%E5%86%85%E5%AE%B9%E6%B1%87%E6%80%BB/">
+                        <span class="hidden-mobile">系统生物学整理内容汇总</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
