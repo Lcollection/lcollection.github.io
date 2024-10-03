@@ -61,7 +61,7 @@
 <div class="widgets">
 <widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/10/01/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%BF%81%E7%A7%BB%E5%B0%8F%E8%AE%B0/"><span class="title">博客主题迁移小记</span></a><a class="item title" href="/2022/08/15/R%E8%8E%B7%E5%8F%96%E8%8A%AF%E7%89%87%E6%8E%A2%E9%92%88%E4%B8%8E%E5%9F%BA%E5%9B%A0%E5%85%B3%E7%B3%BB/"><span class="title">R获取芯片探针与基因关系</span></a><a class="item title" href="/2023/10/06/%E4%BD%BF%E7%94%A8Quarto%E7%94%9F%E6%88%90%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E4%B9%A6/"><span class="title">使用Quarto生成属于自己的图书</span></a><a class="item title" href="/2023/06/06/Scikit-plot%E6%8C%87%E5%8C%97/"><span class="title">Scikit-plot指北</span></a><a class="item title" href="/2023/01/20/%E7%B3%BB%E7%BB%9F%E7%94%9F%E7%89%A9%E5%AD%A6%E6%95%B4%E7%90%86%E5%86%85%E5%AE%B9%E6%B1%87%E6%80%BB/"><span class="title">系统生物学整理内容汇总</span></a></div></widget>
 
-<widget class="widget-wrapper timeline"><div class="widget-header dis-select"><span class="name">近期动态</span></div><div class="widget-body fs14"><div class="tag-plugin timeline ds-timeline" api="https://api.github.com/repos/xaoxuu/hexo-theme-stellar/issues"></div></div></widget>
+
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -100,12 +100,10 @@
 
 
 
-<footer class="page-footer footnote"><hr><div class="text"><p><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></p>
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">L_Collection</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br><span class="jinrishici-sentence"></span> <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script><br><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-<div class="widgets">
-<widget class="widget-wrapper timeline"><div class="widget-header dis-select"><span class="name">近期动态</span></div><div class="widget-body fs14"><div class="tag-plugin timeline ds-timeline" api="https://api.github.com/repos/xaoxuu/hexo-theme-stellar/issues"></div></div></widget>
-</div></aside><div class='float-panel blur'>
+</aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
@@ -130,7 +128,7 @@
     ctx.search = {};
     ctx.search.service = `local_search`;
     if (ctx.search.service == 'local_search') {
-      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"condeblock":true,"sort":"-date"}`);
       ctx.search[ctx.search.service] = service_obj;
     }
   }
