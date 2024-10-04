@@ -72,7 +72,7 @@
 
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/10/01/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%BF%81%E7%A7%BB%E5%B0%8F%E8%AE%B0/"><span class="title">博客主题迁移小记</span></a><a class="item title" href="/2022/08/15/R%E8%8E%B7%E5%8F%96%E8%8A%AF%E7%89%87%E6%8E%A2%E9%92%88%E4%B8%8E%E5%9F%BA%E5%9B%A0%E5%85%B3%E7%B3%BB/"><span class="title">R获取芯片探针与基因关系</span></a><a class="item title" href="/2023/10/06/%E4%BD%BF%E7%94%A8Quarto%E7%94%9F%E6%88%90%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E4%B9%A6/"><span class="title">使用Quarto生成属于自己的图书</span></a><a class="item title" href="/2023/06/06/Scikit-plot%E6%8C%87%E5%8C%97/"><span class="title">Scikit-plot指北</span></a><a class="item title" href="/2023/01/20/%E7%B3%BB%E7%BB%9F%E7%94%9F%E7%89%A9%E5%AD%A6%E6%95%B4%E7%90%86%E5%86%85%E5%AE%B9%E6%B1%87%E6%80%BB/"><span class="title">系统生物学整理内容汇总</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/10/04/%E7%AE%80%E8%BF%B0%E5%AE%9A%E5%90%91%E8%BF%9B%E5%8C%96/"><span class="title">简述定向进化</span></a><a class="item title" href="/2024/10/01/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E8%BF%81%E7%A7%BB%E5%B0%8F%E8%AE%B0/"><span class="title">博客主题迁移小记</span></a><a class="item title" href="/2022/08/15/R%E8%8E%B7%E5%8F%96%E8%8A%AF%E7%89%87%E6%8E%A2%E9%92%88%E4%B8%8E%E5%9F%BA%E5%9B%A0%E5%85%B3%E7%B3%BB/"><span class="title">R获取芯片探针与基因关系</span></a><a class="item title" href="/2023/10/06/%E4%BD%BF%E7%94%A8Quarto%E7%94%9F%E6%88%90%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9B%BE%E4%B9%A6/"><span class="title">使用Quarto生成属于自己的图书</span></a><a class="item title" href="/2023/06/06/Scikit-plot%E6%8C%87%E5%8C%97/"><span class="title">Scikit-plot指北</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -122,12 +122,12 @@
       <p>快来参与讨论吧~</p>
 
     </section>
-    <section class='body cmt-body beaudar'>
+    <section class='body cmt-body giscus'>
       
 
 <svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
 
-<div id="beaudar" repo="Lcollection/blog-comment" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+<div id="giscus" src="https://giscus.app/client.js" data-repo="Lcollection/blog-comment" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous"></div>
 
     </section>
   </div>
@@ -468,26 +468,25 @@
 <!-- optional -->
 
   <script type="module">
-  const el = document.querySelector('#comments #beaudar');
-  util.viewportLazyload(el, load_beaudar, false);
+  const el = document.querySelector('#comments #giscus');
+  util.viewportLazyload(el, load_discus, false);
 
-  function load_beaudar() {
+  function load_discus() {
     if (!el) return;
     try {
-      el.innerHTML = '';
-    } catch (error) {
-      console.error(error);
-    }
-    const script = document.createElement('script');
-    script.src = 'https://beaudar.lipk.org/client.js';
-    script.async = true;
-    for (const key of Object.keys(el.attributes)) {
-      const attr = el.attributes[key];
-      if (['class', 'id'].includes(attr.name) === false) {
-        script.setAttribute(attr.name, attr.value);
+        el.innerHTML = '';
+      } catch (error) {
+        console.error(error);
       }
-    }
-    el.appendChild(script);
+      const script = document.createElement('script');
+      script.async = true;
+      for (const key of Object.keys(el.attributes)) {
+        const attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
   }
 </script>
 
