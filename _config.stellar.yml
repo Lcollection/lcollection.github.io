@@ -1,0 +1,132 @@
+logo:
+  subtitle: Life is all about keeping busy. | 你怎么知道这里有东西？
+
+
+search:
+   service: local_search
+   local_search:        #可以在front-matter中设置indexing: false 避免被搜索
+     field: all         #post, page, all 
+     path: /search.json #搜索文件存放位置
+     content: true      #是否搜索内容
+     condeblock: true   #是否搜索代码块
+
+# 侧边栏主功能导航菜单
+menubar:
+  columns: 4 # 一行多少个
+  items: # 可按照自己需求增加，符合以下格式即可
+    - id: post # 页面中高亮的 menu_id
+      theme: '#1BCDFC' # 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
+      icon: solar:documents-bold-duotone 
+      # 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
+      title: 博客 # 标题
+      url: / # 跳转链接，支持相对路径和绝对路径
+    - id: wiki
+      theme: '#3DC550'
+      icon: solar:notebook-bookmark-bold-duotone
+      title: 文档
+      url: /wiki/
+     - id: explore
+       theme: '#FA6400'
+       icon: solar:planet-bold-duotone
+       title: 探索
+       url: /explore/
+     - id: social
+       theme: '#F44336'
+       icon: solar:chat-square-like-bold-duotone
+       title: 社交
+       url: /friends/
+
+
+# article:
+#   category_color:
+#     '生活随笔': '#DA0F47'
+#     '科技速报': '#03a9f4'
+#     '技术分享': '#ff9800'
+#     '开源项目': '#ffa000'
+#   share: [wechat, weibo, email, link]
+#   related_post:
+#     enable: true  
+
+comments:
+  service: giscus
+  giscus:
+    data-repo: Lcollection/blog-comment
+    data-mapping: pathname
+
+
+
+# 角标
+footer:
+  content:
+    本站由 [{author.name}](/) 使用 [{theme.name} {theme.version}]({theme.tree}) 主题创建。
+
+    <span class="jinrishici-sentence"></span>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+# 站点主结构树
+site_tree:
+  # -- 列表类页面 -- #
+  # 主页配置
+  home:
+    leftbar: welcome, recent
+    rightbar: timeline
+  # 博客列表页配置
+  index_blog:
+    base_dir: blog # 只影响自动生成的页面路径
+    menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
+    leftbar: welcome, recent # for categories/tags/archives
+    rightbar:
+    nav_tabs:  # 近期发布 分类 标签 专栏 归档 and ...
+      # '朋友文章': /friends/rss/
+  # 博客专栏列表页配置
+  index_topic:
+    base_dir: topic # 只影响自动生成的页面路径
+    menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 topic 的页面默认使用这里配置的 menu_id
+  # 文档列表页配置
+  index_wiki:
+    base_dir: wiki # 只影响自动生成的页面路径
+    menu_id: wiki # 未在 front-matter 中指定 menu_id 时，layout 为 wiki 的页面默认使用这里配置的 menu_id
+    leftbar: ghissues, related, recent # for wiki
+    rightbar: timeline
+    nav_tabs:
+      # 'more': https://github.com/xaoxuu
+  # -- 内容类页面 -- #
+  # 博客文章内页配置
+  post:
+    menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
+    leftbar: related, ghrepo, ghissues, recent # for pages using 'layout:post'
+    rightbar: ghrepo, toc
+  # 博客专栏文章内页配置
+  topic:
+    menu_id: post
+  # 文档内页配置
+  wiki:
+    menu_id: wiki # 未在 front-matter 中指定 menu_id 时，layout 为 wiki 的页面默认使用这里配置的 menu_id
+    leftbar: tree, ghissues, related, recent # for wiki
+    rightbar: ghrepo, toc
+  # 作者信息配置
+  author: 
+    base_dir: author # 只影响自动生成的页面路径
+    menu_id: post
+    leftbar: recent, timeline
+    rightbar: timeline
+  # 错误页配置
+  error_page:
+    menu_id: post
+    '404': '/404.html'
+    leftbar: recent, timeline
+    rightbar: timeline
+  # 其它自定义页面配置 layout: page
+  page:
+    leftbar: recent
+    rightbar: toc, timeline
+
+
+
+
+open_graph:
+  enable: true
