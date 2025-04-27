@@ -1,7 +1,5 @@
 logo:
   subtitle: Life is all about keeping busy. | 你怎么知道这里有东西？
-
-
 search:
    service: local_search
    local_search:        #可以在front-matter中设置indexing: false 避免被搜索
@@ -25,16 +23,16 @@ menubar:
       icon: solar:notebook-bookmark-bold-duotone
       title: 文档
       url: /wiki/
-     - id: explore
-       theme: '#FA6400'
-       icon: solar:planet-bold-duotone
-       title: 探索
-       url: /explore/
-     - id: social
-       theme: '#F44336'
-       icon: solar:chat-square-like-bold-duotone
-       title: 社交
-       url: /friends/
+    - id: explore
+      theme: '#FA6400'
+      icon: solar:planet-bold-duotone
+      title: 探索
+      url: /explore/
+    - id: social
+      theme: '#F44336'
+      icon: solar:chat-square-like-bold-duotone
+      title: 社交
+      url: /friends/
 
 
 # article:
