@@ -3,7 +3,7 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - firefly
+      - main
   workflow_dispatch:
 
 permissions:
