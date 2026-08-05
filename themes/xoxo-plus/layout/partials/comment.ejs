@@ -1,0 +1,57 @@
+<% if (theme.comment_extend.gitalk.enable){ %>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <div id="gitalk-container"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+            clientID: '<%= theme.comment_extend.gitalk.clientID %>',
+            clientSecret: '<%= theme.comment_extend.gitalk.clientSecret %>',
+            id: window.location.pathname,
+            repo: '<%= theme.comment_extend.gitalk.repo %>',
+            owner: '<%= theme.comment_extend.gitalk.owner %>',
+            admin: '<%= theme.comment_extend.gitalk.admin %>'
+        })
+        gitalk.render('gitalk-container')
+    </script>
+<% } else if (theme.comment_extend.giscus.enable){ %>
+    <div class="giscus" style="padding: 10px 50px"></div>
+    <script src="https://giscus.app/client.js"
+        data-repo="<%= theme.comment_extend.giscus.repo %>"
+        data-repo-id="<%= theme.comment_extend.giscus.repoId %>"
+        data-category="Announcements"
+        data-category-id="<%= theme.comment_extend.giscus.dataCategoryId %>"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="https://cdn.jsdelivr.net/gh/fooying/hexo-theme-xoxo-plus@master/source/css/light_tritanopia_xoxo.min.css"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+<% } else if (config.disqus_shortname){ %>
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = '<%= config.disqus_shortname %>';
+    <% if (page.permalink){ %>
+    var disqus_url = '<%= page.permalink %>';
+    <% } %>
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//<%= config.disqus_shortname %>.disqus.com/count.js" async></script>
+
+<% } %>

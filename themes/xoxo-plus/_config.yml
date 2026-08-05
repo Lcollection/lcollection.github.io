@@ -1,0 +1,71 @@
+
+# html lang
+language: zh-CN
+
+# main menu navigation
+menu:
+  home: /
+  post:
+    categories: /categories
+    archives: /archives
+    tags: /tags
+  about: /friends
+
+# Miscelaneous
+favicon: footer-logo.png
+logo: tou.png
+
+share:
+    show: false
+    img:
+    img_alt:
+    tip_text:
+
+# stylesheets loaded in the <head>
+stylesheets:
+- //cdn.bootcss.com/pure/1.0.0/pure-min.css
+- /css/xoxo.css
+
+# baidu url js push
+baidu_url_js_push: false
+
+# comment extend, support gitalk, giscus
+# giscus https://giscus.app/zh-CN
+comment_extend:
+    gitalk:
+        enable: false
+        owner: Lcollection
+        repo: blog-comment
+        admin: Lcollection
+        clientID:
+        clientSecret:
+    giscus:
+        enable: true
+        repo: Lcollection/blog-comment
+        repoId: R_kgDOM6ic6w
+        dataCategoryId: DIC_kwDOM6ic684C3C2a
+
+# scripts loaded in the end of the body
+scripts:
+
+# switch
+show_excerpt: true
+show_date: true
+
+# footer
+index_page: https://blog.lixiuxu.cn
+main_site: https://blog.lixiuxu.cn
+github: https://github.com/Lcollection
+links_url: /friends
+
+# 友情链接
+links: {}
+
+# project
+projects: {}
+
+# activitys
+activitys: {}
+
+# papers
+papers: {}

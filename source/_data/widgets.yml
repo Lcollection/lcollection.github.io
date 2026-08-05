@@ -1,0 +1,69 @@
+toc:
+  layout: toc
+  list_number: false # 是否显示序号
+  min_depth: 2 # 建议不要低于 2 即从 H2 标签开始解析（H1标签用于文章大标题）
+  max_depth: 5 # 5 代表最多解析到 H5 标签
+  fallback: recent # Use a backup widget when toc does not exist.
+  collapse: false # true / false / auto (始终折叠/不折叠/自动折叠)
+
+
+recent:
+  layout: recent
+  rss: # /atom.xml # npm i hexo-generator-feed
+  limit: 5 # Count of posts
+
+
+my_recent:
+  layout: recent
+
+
+related:
+  layout: related
+
+linklist:
+  layout: linklist
+  columns: 1 
+  items:
+    - icon: '<svg...></svg>' # 或者 icons.yml 中设置的 icon 名称
+      title: 关于
+      url: /about/
+
+
+welcome:
+  layout: markdown
+  title: 你好，旅行者
+  linklist: # 与 linklist 组件写法相同
+    columns: 1 
+    items:
+      - icon: 
+        title: 思考一下
+        url: about/#comments
+  content: |
+      每一个深夜都是自己独处的时间
+
+
+tagcloud:
+  layout: tagcloud
+  title: 标签云
+  # 标签云配置
+  min_font: 12
+  max_font: 24
+  amount: 100
+  orderby: name
+  order: 1 # 1, sac 升序；-1, desc 降序
+  color: false # 使用颜色
+  start_color:  # 开始的颜色。您可使用十六进位值（'#b700ff'），rgba（rgba(183, 0, 255, 1)），hsla（hsla(283, 100%, 50%, 1)）或 颜色关键字。此变量仅在 color 参数开启时才有用。
+  end_color:  # 结束的颜色。您可使用十六进位值（'#b700ff'），rgba（rgba(183, 0, 255, 1)），hsla（hsla(283, 100%, 50%, 1)）或 颜色关键字。此变量仅在 color 参数开启时才有用。
+  show_count: false # 显示每个标签的文章总数
+
+
+ghrepo:
+  layout: ghrepo
+
+timeline:
+  layout: timeline
+  title: 近期动态
+  api: # 若你想限制数量，在api链接后面加上?per_page=1指限制为1条
+  user: Lcollection # 是否过滤只显示某个人发布的内容，如果要筛选多人，用英文逗号隔开
+  hide: # title,footer # 隐藏标题或底部 # 此功能需要 Stellar v1.13.0
+

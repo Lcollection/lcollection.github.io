@@ -1,0 +1,50 @@
+name: Stellar
+title: Stellar - 每个人的独立博客
+subtitle: '每个人的独立博客 | Designed by xaoxuu'
+tags: 博客主题
+icon: /assets/wiki/stellar/icon.svg
+cover: /assets/wiki/stellar/icon.svg
+description: Stellar 是一个内置文档系统的简约商务风 Hexo 主题，支持丰富的标签和动态数据组件。
+repo: xaoxuu/hexo-theme-stellar
+search:
+  filter: /wiki/stellar/
+  placeholder: 在 Stellar 中搜索...
+leftbar: 
+  - tree
+  - timeline_stellar_releases
+  - related
+comment_title: '评论区仅供交流，有问题请提 [issue](https://github.com/xaoxuu/hexo-theme-stellar/issues) 反馈。'
+comments:
+  service: giscus
+  giscus:
+    data-repo: Lcollection/blog-comment
+
+
+
+base_dir: /wiki/stellar/
+tree:
+  '快速开始':
+    - index
+    - examples
+    - releases
+  '基本使用':
+    - theme-settings
+    - pages
+    - sidebar
+    - tag-plugins
+    - tag-plugins/express
+    - tag-plugins/data
+    - tag-plugins/container
+    - comments
+  '文档系统':
+    - wiki-settings
+  '进阶玩法':
+    - widgets
+    - advanced-settings
+    - notes
+    - fcircle
+  '技术支持':
+    - articles
+    - todo
+    - contributors
+
